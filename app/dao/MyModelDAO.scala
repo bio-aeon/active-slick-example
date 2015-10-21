@@ -10,12 +10,14 @@ import io.strongtyped.active.slick.Lens._
 
 import models.MyModel
 
-class MyModelDAO extends EntityActions with JdbcProfileProvider {
+trait MyProfileProvider extends JdbcProfileProvider {
   val dc = DatabaseConfig.forConfig[JdbcProfile]("mydb")
   type JP = JdbcProfile
   val jdbcProfile = dc.driver
   val db = dc.db
+}
 
+class MyModelDAO extends EntityActions with MyProfileProvider {
   import jdbcProfile.api._
   val baseTypedType = implicitly[BaseTypedType[Id]]
 
