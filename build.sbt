@@ -10,7 +10,7 @@ libraryDependencies ++= Seq(
   cache,
   ws,
   specs2 % Test,
-  "io.strongtyped"%% "active-slick" % "0.3.3",
+  "io.strongtyped"%% "active-slick" % "0.3.4",
   "org.mariadb.jdbc" % "mariadb-java-client" % "1.1.9",
   "com.typesafe.slick" %% "slick-hikaricp" % "3.1.0"
 )
